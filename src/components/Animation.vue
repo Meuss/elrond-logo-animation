@@ -373,20 +373,14 @@ export default {
       moveCenter(centers[3], -1, 1);
 
       tl.addLabel('lines', '>');
-      lines(topright);
-      lines(topleft);
-      lines(bottomright);
-      lines(bottomleft);
+      [topright, topleft, bottomright, bottomleft].forEach((el) => lines(el));
 
       tl.addLabel('rotate', '>');
       tl.to('#logo', { rotate: 0, duration: 1, ease: 'back.inOut(1.3)', id: 'rotate' }, 'rotate-=0.2');
 
       tl.addLabel('lines-reverse', '>+=0.1');
       tl.fromTo('#center', { opacity: 0 }, { opacity: 1, duration: 0.2, id: 'lines-reverse' }, 'lines-reverse');
-      linesReverse(topright);
-      linesReverse(topleft);
-      linesReverse(bottomright);
-      linesReverse(bottomleft);
+      [topright, topleft, bottomright, bottomleft].forEach((el) => linesReverse(el));
 
       tl.addLabel('draw', '>');
       tl.set('#big path', { opacity: 1, fill: 'none', id: 'draw' }, 'draw+=0.5');
@@ -414,9 +408,6 @@ svg rect {
   fill: transparent;
 }
 div {
-  display: flex;
-  align-items: center;
-  position: relative;
   margin: 100px;
 }
 #big path {
