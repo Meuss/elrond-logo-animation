@@ -291,8 +291,9 @@
 import { onMounted } from 'vue';
 import { gsap } from 'gsap';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 import { GSDevTools } from 'gsap/GSDevTools';
-gsap.registerPlugin(DrawSVGPlugin, GSDevTools);
+gsap.registerPlugin(DrawSVGPlugin, MotionPathPlugin, GSDevTools);
 
 export default {
   setup() {
